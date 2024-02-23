@@ -26,6 +26,8 @@ public class AccountCreatedPage extends BasePage
      @FindBy(xpath="//a[text()=\"Continue\"]")
      WebElement btn_continue1;
      
+     @FindBy(xpath="//div[@aria-label=\"Close ad\"]")
+     WebElement ad_close_btn;
      
      
    
@@ -52,5 +54,18 @@ public class AccountCreatedPage extends BasePage
      public void click_continue1()
      {
     	 btn_continue.click();
+     }
+     
+     public boolean isAdPresent()
+     {
+    	 if(ad_close_btn.isDisplayed())
+    	 {
+    		 ad_close_btn.click();
+    		 return true;
+    	 }
+    	 else
+    	 {
+    		 return false;
+    	 }
      }
 }

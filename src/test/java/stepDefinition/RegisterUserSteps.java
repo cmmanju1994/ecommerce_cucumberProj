@@ -109,10 +109,12 @@ public class RegisterUserSteps
 	
 
 	@When("user Click on Continue button")
-	public void user_click_on_continue_button() 
+	public void user_click_on_continue_button() throws InterruptedException 
 	{
 	   accp.click_continue();
-	}
+	   //Thread.sleep(100000);
+	  // accp.isAdPresent();
+	   }
 	
 	@When("user Click on Delete Account button")
 	public void user_click_on_delete_account_button() 
