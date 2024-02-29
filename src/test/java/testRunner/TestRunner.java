@@ -7,12 +7,12 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions( 
-		          // features=".//Feature Files/RegisterUser.feature ",
-		         features="/Ecommerce/Feature Files/AddProductInCart.feature",
-		         // features= {".//Features/Login.feature",".//Features/Registration.feature"},.
+		          //features={"src/test/Feature Files"},
+		         //features="/Ecommerce/Feature Files/SearchProduct.feature/AddProductInCart.feature",
+		          //features= {".//Features/SearchProduct.feature",".//Features/AddProductInCart.feature"},
 		           //features={".//Feature Files/NopCommerce_Registration.feature",".//Feature Files/NopCommerce_Login.feature"},
 		
-		
+		features= {".//Feature Files/"},    
 		
 		
 		
