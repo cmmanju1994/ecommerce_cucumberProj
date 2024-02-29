@@ -6,11 +6,12 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
+import java.util.List;
 import java.util.Properties;
 import java.util.Set;
 
 import org.apache.logging.log4j.Logger;
-import org.apache.xmlbeans.impl.xb.xsdschema.ListDocument.List;
+//import org.apache.xmlbeans.impl.xb.xsdschema.ListDocument.List;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -767,7 +768,7 @@ public class BaseClass
  			}
  		}
  		
- 		public int getColumncount(WebElement row) {
+ 	/*	public int getColumncount(WebElement row) {
  			List<WebElement> columns = row.findElements(By.tagName("td"));
  			int a = columns.size();
  			System.out.println(columns.size());
@@ -776,7 +777,7 @@ public class BaseClass
  				System.out.print("|");
  			}
  			return a;
- 		}
+ 		}*/
  		
  		public int getRowCount(WebElement table) {
  			List<WebElement> rows = table.findElements(By.tagName("tr"));
