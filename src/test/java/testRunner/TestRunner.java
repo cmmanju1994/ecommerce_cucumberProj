@@ -7,8 +7,9 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions( 
-		           features=".//Feature Files",
-		          //features= {".//Features/Login.feature",".//Features/Registration.feature"},.
+		          // features=".//Feature Files/RegisterUser.feature ",
+		         features="/Ecommerce/Feature Files/AddProductInCart.feature",
+		         // features= {".//Features/Login.feature",".//Features/Registration.feature"},.
 		           //features={".//Feature Files/NopCommerce_Registration.feature",".//Feature Files/NopCommerce_Login.feature"},
 		
 		

@@ -1,5 +1,6 @@
 package stepDefinition;
 
+import java.io.IOException;
 import java.time.Duration;
 
 import org.apache.logging.log4j.Logger;
@@ -154,4 +155,21 @@ public void account_created_messeage_is_visible()
       String exp_text="ACCOUNT CREATED!";
       Assert.assertEquals(act_text, exp_text);
 }
+
+@Then("Email Address already exist! visible")
+public void email_address_already_exist_visible() 
+{
+  String Actual_text=sl.gettext_emailRegisterd();
+  String Exp_text="Email Address already exist!";
+  Assert.assertEquals(Actual_text, Exp_text);
+}
+
+@When("user enter existing name and existing email address")
+public void user_enter_existing_name_and_existing_email_address() throws IOException 
+{
+    sl.enter_name_signup(BaseClass.getProperties().getProperty("name"));
+    sl.enter_email_signup(BaseClass.getProperties().getProperty("email"));
+
+}
+
 }

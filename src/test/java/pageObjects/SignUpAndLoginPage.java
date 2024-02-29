@@ -41,6 +41,9 @@ public class SignUpAndLoginPage extends BasePage
 	@FindBy(xpath="//button[@data-qa=\"login-button\"]")
 	WebElement button_login;
 	
+	@FindBy(xpath="//*[@id=\"form\"]/div/div/div[3]/div/form/p")
+	WebElement txt_EmailRegisterd;
+	
 	// Methods
 	
 	public String get_SignUptext()
@@ -84,6 +87,11 @@ public class SignUpAndLoginPage extends BasePage
 	public void click_on_login_button()
 	{
 		button_login.click();
+	}
+	
+	public String gettext_emailRegisterd()
+	{
+		return txt_EmailRegisterd.getText();
 	}
 	
 	

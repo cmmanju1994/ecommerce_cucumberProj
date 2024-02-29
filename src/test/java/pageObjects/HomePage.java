@@ -25,6 +25,9 @@ public class HomePage extends BasePage
 	@FindBy(xpath="//a[@href=\"/delete_account\"]")
 	WebElement link_delete_acc;
 	
+	@FindBy(xpath="//a[@href=\"/products\"]")
+	WebElement link_Products;
+	
 	
 	
 	// Methods
@@ -55,6 +58,11 @@ public class HomePage extends BasePage
 	public void click_deleteacc()
 	{
 		link_delete_acc.click();
+	}
+	
+	public void click_On_Products_link()
+	{
+		link_Products.click();
 	}
 
 }
