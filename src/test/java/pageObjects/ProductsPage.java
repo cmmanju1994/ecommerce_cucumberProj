@@ -1,10 +1,15 @@
 package pageObjects;
 
+import java.time.Duration;
 import java.util.List;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import factory.BaseClass;
 
@@ -17,7 +22,7 @@ public class ProductsPage extends BasePage
 	}
 
 
-	// Constructor 
+
 	
 	
 	//
@@ -42,26 +47,35 @@ public class ProductsPage extends BasePage
 	@FindBy(xpath="//div[@class=\"productinfo text-center\"]//p")
 	List<WebElement> Searched_Products;
 	
-	@FindBy(xpath="//img[@src=\"/get_product_picture/1\"]")
-	WebElement First_Product;
+	@FindBy(xpath="//img[@src=\"/get_product_picture/1\"]")      
+	public WebElement First_Product;
 	
 	@FindBy(xpath="//img[@src=\"/get_product_picture/2\"]")
-	WebElement Second_Product;
+	public WebElement Second_Product;
 	
 	@FindBy(xpath="//img[@alt=\"ecommerce website products\"]")
 	List<WebElement> all_products;
 	
-	@FindBy(xpath="(//div[@class=\"productinfo text-center\"]//a[@class=\"btn btn-default add-to-cart\"])[1]")
-	WebElement addtocart_FirstProduct;
+	//***********//
 	
-	@FindBy(xpath="(//a[@data-product-id=\"2\"][@class=\"btn btn-default add-to-cart\"])[1]")
-	WebElement addtocart_SecondProduct;
+	@FindBy(xpath="/html[1]/body[1]/section[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/a[1]")
+	WebElement AddtoCart_FirstProduct;
 	
-	@FindBy(xpath="//div[@class=\"modal-footer\"]/button")
-	WebElement btn_ContinueShopping;
+	@FindBy(xpath="//div[@class=\"modal-content\"]//button")
+	WebElement continue_shopping_button;
 	
-	@FindBy(xpath="(//a[@href=\"/view_cart\"])[2]")
+	@FindBy(xpath="//body[1]/section[2]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/a[1]")
+	WebElement AddtoCart_SecondProduct;
+	
+	
+	
+	@FindBy(xpath="//div[@class=\"modal-body\"]//a")
 	WebElement view_cart;
+	
+	
+	
+	
+	
 	
 	// Action methods
 	
@@ -161,47 +175,33 @@ public class ProductsPage extends BasePage
 		return flag;
 	}
 	
-	public void MouseHover_FirstProduct()
+	public void mousehover_click_addtocart_first()
 	{
-	    // BaseClass obj=new BaseClass();
-	    // obj.mouseover(driver, First_Product);
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+		js.executeScript("window.scrollBy(0, 5000);", "");
 		BaseClass.mouseOverElement(driver, First_Product);
-		
-		// click on add to cart 
-		
-		addtocart_FirstProduct.click();
-		
-		
+		AddtoCart_FirstProduct.click();
 		
 	}
 	
-	public void click_on_continue_shopping()
+	public void click_on_ContinueShopping()
 	{
-		btn_ContinueShopping.click();
+		continue_shopping_button.click();
 	}
 	
-	public void MouseHover_SecondProduct()
+	public void mousehover_click_addtocart_second()
 	{
-		BaseClass.mouseOverElement(driver, Second_Product);
-		
-		if(addtocart_SecondProduct.isDisplayed())
-		{
-			addtocart_SecondProduct.click();
-			System.out.println("Successfuly clicked on add to cart page");
-		}
-		else
-		{
-			System.out.println("unable to click on add to cart");
-		}
-		
-		//addtocart_SecondProduct
-		
+		BaseClass.mouseOverElement(driver,Second_Product);
+		AddtoCart_SecondProduct.click();
 	}
 	
-	public void click_on_viewcart()
+	public void click_viewcart()
 	{
 		view_cart.click();
 	}
+	
+	
+	
 	
 	
 }

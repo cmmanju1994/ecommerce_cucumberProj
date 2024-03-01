@@ -10,60 +10,48 @@ import pageObjects.ProductsPage;
 
 public class AddToCartSteps 
 {
-	
 	WebDriver driver;
 	ProductsPage pp=new ProductsPage(BaseClass.getDriver());
 	ChekoutPage cp=new ChekoutPage(BaseClass.getDriver());
 	
 	
 	
-	
-	@Then("all products are displayed on the page")
-	public void all_products_are_displayed_on_the_page() 
+	@When("user mouse hover on first product and click on add to cart")
+	public void user_mouse_hover_on_first_product_and_click_on_add_to_cart() 
 	{
-	   Assert.assertTrue(pp.isall_products_displayed());
+	    pp.mousehover_click_addtocart_first();
 	}
 
-	@When("mouse over first product and click on add to cart button")
-	public void mouse_over_first_product_and_click_on_add_to_cart_button() 
+	@When("user click on continue shopping button")
+	public void user_click_on_continue_shopping_button() 
 	{
-	    pp.MouseHover_FirstProduct();
-	   
+	    pp.click_on_ContinueShopping();
 	}
 
-	@When("click continue shopping button")
-	public void click_continue_shopping_button() 
+	@When("user mouse hover on second product and click on add to cart")
+	public void user_mouse_hover_on_second_product_and_click_on_add_to_cart() 
 	{
-	 pp.click_on_continue_shopping();
+	   pp.mousehover_click_addtocart_second();
 	}
 
-	@When("mouse over second product and click on view cart link")
-	public void mouse_over_second_product_and_click_on_view_cart_link() 
+	@When("user click on view cart link")
+	public void user_click_on_view_cart_link() 
 	{
-		 pp.MouseHover_SecondProduct();
-		 pp.click_on_viewcart();
-		 
+         pp.click_viewcart();
 	}
 
-
-
-	@Then("both products are added to cart")
-	public void both_products_are_added_to_cart() 
+	@Then("both products have been added to cart successfully")
+	public void both_products_have_been_added_to_cart_successfully() 
 	{
-	 boolean status=cp.is_proceed_checkout_visible();
-	 Assert.assertTrue(status);
-	 
-	 Assert.assertTrue(cp.is_products_visible_cart());
+	    Assert.assertTrue(cp.is_proceedtocheckout_visible());
+	    Assert.assertTrue(cp.is_both_products_incart());
+	    
 	}
 
-	@Then("prices,quantity and total price visible")
-	public void prices_quantity_and_total_price_visible() 
+	@Then("unit price,qty and total price is visible")
+	public void unit_price_qty_and_total_price_is_visible() 
 	{
-	   boolean status_First_Prod_details=cp.is_price_qty_total_visible_InCart_First();
-	   Assert.assertTrue(status_First_Prod_details);
-	   
-	   boolean status_Second_Prod_details=cp.is_price_qty_total_visible_InCart_Second();
-	   Assert.assertTrue(status_Second_Prod_details);
+	  Assert.assertTrue(cp.product_details_cart());
 	}
 
 
