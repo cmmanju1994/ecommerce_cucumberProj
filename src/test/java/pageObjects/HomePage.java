@@ -3,6 +3,8 @@ package pageObjects;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import drivers.DriverInitialization;
+
 public class HomePage extends BasePage {
 
 	// Constructor to initialize Page Objects
@@ -31,7 +33,18 @@ public class HomePage extends BasePage {
 
 	@FindBy(xpath = "//div[@id=\"dismiss-button\"]")
 	WebElement adclose;
-
+	
+	@FindBy(xpath="//div[@id=\"ad_position_box\"]")
+	WebElement adPositionBox;
+	
+	@FindBy(xpath="//div[@id=\"dismiss-button\"]")
+	WebElement disimiss_button_ad;
+	
+	@FindBy(xpath="//ul[@class=\"nav navbar-nav\"]/li[3]")
+	WebElement cart;
+	
+	
+	
 	// Methods
 
 	public boolean isSignUp_Login_displayed() {
@@ -60,7 +73,6 @@ public class HomePage extends BasePage {
 	public void click_On_Products_link() {
 
 		link_Products.click();
-
 		/*
 		 * BaseClass obj=new BaseClass(); if(adlayout.isDisplayed()) {
 		 * obj.switchToFrameById(driver, "aswift_3"); adclose.click();
@@ -69,6 +81,47 @@ public class HomePage extends BasePage {
 		 * } else { link_Products.click(); }
 		 */
 
+		try
+		{
+		if(adPositionBox.isDisplayed())
+		{
+			DriverInitialization.getDriver().switchTo().frame(adPositionBox);
+			disimiss_button_ad.click();
+			DriverInitialization.getDriver().switchTo().defaultContent();
+		}
+		else
+		{
+			System.out.println("Ad has not come");
+		}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		finally
+		{
+			System.out.println("Finally executed");
+		}
+		
+		/*BaseClass obj=new BaseClass();
+		if(adlayout.isDisplayed())
+		{
+			obj.switchToFrameById(driver, "aswift_3");
+			adclose.click();
+			driver.switchTo().defaultContent();
+			
+		}
+		else
+		{
+			link_Products.click();
+		}*/
+				
 	}
+	
+	public void click_cart()
+	{
+		cart.click();
+	}
+	
 
 }

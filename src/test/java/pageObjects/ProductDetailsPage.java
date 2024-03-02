@@ -127,5 +127,4 @@ public class ProductDetailsPage extends BasePage {
 	public void click_on_viewcart() {
 		view_cart.click();
 	}
-
 }

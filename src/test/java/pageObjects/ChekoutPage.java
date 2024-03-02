@@ -59,6 +59,18 @@ public class ChekoutPage extends BasePage {
 		return proceedtocheckout_visiibility;
 	}
 
+	@FindBy(xpath = "//div[@class=\"modal-body\"]//a")
+	WebElement SignUp_Login_link;
+
+	@FindBy(xpath = "//ul[@id=\"address_delivery\"]")
+	WebElement address;
+
+	@FindBy(xpath = "//textarea[@name=\"message\"]")
+	WebElement input_comment;
+
+	@FindBy(xpath = "//a[@class=\"btn btn-default check_out\"]")
+	WebElement btn_place_order;
+
 	public boolean is_both_products_incart() {
 		boolean flag = false;
 		// ProductsPage pp=new ProductsPage(BaseClass.getDriver());
@@ -97,6 +109,40 @@ public class ChekoutPage extends BasePage {
 	public String get_cart_qty() {
 		String qty = qty_cart.getText();
 		return qty;
+	}
+
+	public void click_checkout() {
+		Proceedto_Checkout.click();
+	}
+
+	public boolean isRegister_Login_appeared() {
+		boolean flag = false;
+		if (SignUp_Login_link.isDisplayed()) {
+			flag = true;
+			return flag;
+		}
+		return flag;
+	}
+
+	public void click_SignUp_link() {
+		SignUp_Login_link.click();
+	}
+
+	public boolean isAddressdisplayed() {
+		boolean flag = false;
+		if (address.isDisplayed()) {
+			flag = true;
+		}
+		return flag;
+
+	}
+
+	public void add_comment() {
+		input_comment.sendKeys("hi anvita doni");
+	}
+
+	public void click_placeOrder() {
+		btn_place_order.click();
 	}
 
 }

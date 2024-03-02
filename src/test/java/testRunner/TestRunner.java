@@ -12,7 +12,7 @@ import io.cucumber.junit.CucumberOptions;
 		          //features= {".//Features/SearchProduct.feature",".//Features/AddProductInCart.feature"},
 		           //features={".//Feature Files/NopCommerce_Registration.feature",".//Feature Files/NopCommerce_Login.feature"},
 		
-		            features= {".//Feature Files/"},    
+		            //features= {".//Feature Files/"},    
 		
 		
 		

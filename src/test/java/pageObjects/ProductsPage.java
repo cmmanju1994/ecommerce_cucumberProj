@@ -16,8 +16,6 @@ public class ProductsPage extends BasePage {
 		// TODO Auto-generated constructor stub
 	}
 
-	//
-
 	// Page Elements
 
 	@FindBy(xpath = "//div[@class=\"single-products\"]")
