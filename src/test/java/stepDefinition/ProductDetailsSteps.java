@@ -29,6 +29,7 @@ public class ProductDetailsSteps
 	@Then("user navigated to ALL PRODUCTS page successfully")
 	public void user_navigated_to_all_products_page_successfully() throws IOException 
 	{
+		
 	   pp= new ProductsPage(BaseClass.getDriver());
 	   Assert.assertEquals(pp.get_ProductsPage_title(),BaseClass.getProperties().getProperty("products_page_title"));
 	   //Assert.assertEquals(pp.get_ProductsPage_title(), BaseClass.getProperties().getProperty("products_page_title")); 

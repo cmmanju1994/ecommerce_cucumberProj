@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import factory.BaseClass;
+
 public class HomePage extends BasePage
 {
 
@@ -27,6 +29,13 @@ public class HomePage extends BasePage
 	
 	@FindBy(xpath="//a[@href=\"/products\"]")
 	WebElement link_Products;
+	
+	//*************//
+	@FindBy(xpath="//div[@class=\"end-card-overlay\"]")
+	WebElement adlayout;
+	
+	@FindBy(xpath="//div[@id=\"dismiss-button\"]")
+	WebElement adclose;
 	
 	
 	
@@ -62,7 +71,23 @@ public class HomePage extends BasePage
 	
 	public void click_On_Products_link()
 	{
+		
 		link_Products.click();
+		
+		/*BaseClass obj=new BaseClass();
+		if(adlayout.isDisplayed())
+		{
+			obj.switchToFrameById(driver, "aswift_3");
+			adclose.click();
+			driver.switchTo().defaultContent();
+			
+		}
+		else
+		{
+			link_Products.click();
+		}*/
+		
+		
 	}
 
 }

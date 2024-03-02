@@ -122,6 +122,8 @@ public class ProductsPage extends BasePage
 	public void click_on_view_product()
 	{
 		BaseClass.ClickAction(driver, view_product);
+		
+		
 	}
 	
 	public void enter_productname_searchbox(String Prod_name)

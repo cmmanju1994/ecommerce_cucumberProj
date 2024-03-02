@@ -43,6 +43,16 @@ public class ProductDetailsPage extends BasePage
 	@FindBy(xpath="//div[@class=\"product-information\"]//p[4]/b")
 	WebElement Product_brand;
 	
+	@FindBy(xpath="//input[@type=\"number\"]")
+	WebElement Product_Qty_Input;
+	
+	@FindBy(xpath="//button[@type=\"button\"]")
+	WebElement button_addto_cart;
+	
+	@FindBy(xpath="//u[normalize-space()='View Cart']")
+	WebElement view_cart;
+	
+	
 	//corresponding action methods
 	
 	public boolean is_product_name_displayed()
@@ -135,6 +145,25 @@ public class ProductDetailsPage extends BasePage
 			return false;
 		}
 	}
+	
+	public void enter_Productqty(String qty)
+	{
+		Product_Qty_Input.clear();
+		Product_Qty_Input.sendKeys(qty);
+	}
+	
+	public void clickon_addtocart()
+	{
+		button_addto_cart.click();
+	}
+	
+	public void click_on_viewcart()
+	{
+		view_cart.click();
+	}
+	
+	
+	
 	
 
 }

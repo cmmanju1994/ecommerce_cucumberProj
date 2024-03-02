@@ -1,6 +1,8 @@
 package factory;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.logging.log4j.LogManager;
+
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -20,7 +22,9 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
@@ -43,10 +47,15 @@ public class BaseClass
 				switch(getProperties().getProperty("browser").toLowerCase()) 
 				{
 				case "chrome":
-			        driver=new ChromeDriver();
+					ChromeOptions opt=new ChromeOptions();
+					opt.addExtensions(new File("I:\\Ecommerce\\Extensions\\adblock.crx"));
+			        driver=new ChromeDriver(opt);
 			        break;
 			    case "edge":
 			    	driver=new EdgeDriver();
+			        break;
+			    case "firefox":
+			        driver=new FirefoxDriver();
 			        break;
 			    default:
 			        System.out.println("No matching browser");

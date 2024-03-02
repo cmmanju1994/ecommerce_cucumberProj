@@ -2,6 +2,7 @@ pageObjects\SignUpPage.class
 stepDefinition\SearchProductSteps.class
 stepDefinition\LoginSteps.class
 pageObjects\AccountCreatedPage.class
+stepDefinition\VerifyProdQtyInCart.class
 utilities\DataReader$1.class
 pageObjects\ProductDetailsPage.class
 pageObjects\HomePage.class

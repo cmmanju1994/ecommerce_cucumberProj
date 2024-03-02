@@ -54,6 +54,9 @@ public class ChekoutPage extends BasePage
 	@FindBy(xpath="(//img[@alt='Product Image'])[2]")
 	WebElement  SecondProduct_Cart;
 	
+	@FindBy(xpath="//button[@class=\"disabled\"]")
+	WebElement qty_cart;
+	
 	//Action methods
 	
 	public boolean is_proceedtocheckout_visible()
@@ -99,11 +102,15 @@ public class ChekoutPage extends BasePage
 		}
 		return flag;
 		
-		
-		
-		
-		
+		}
+	
+	public String get_cart_qty()
+	{
+		String qty=qty_cart.getText();
+		return qty;
 	}
+	
+	
 	
 	
 	

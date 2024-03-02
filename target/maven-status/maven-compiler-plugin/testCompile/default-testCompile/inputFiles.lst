@@ -1,6 +1,7 @@
 I:\Ecommerce\src\test\java\stepDefinition\Hooks.java
 I:\Ecommerce\src\test\java\utilities\DataReader.java
 I:\Ecommerce\src\test\java\factory\BaseClass.java
+I:\Ecommerce\src\test\java\stepDefinition\VerifyProdQtyInCart.java
 I:\Ecommerce\src\test\java\pageObjects\ProductsPage.java
 I:\Ecommerce\src\test\java\pageObjects\ChekoutPage.java
 I:\Ecommerce\src\test\java\stepDefinition\SearchProductSteps.java
