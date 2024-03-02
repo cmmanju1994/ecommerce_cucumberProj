@@ -58,6 +58,8 @@ public class RegisterUserSteps
 	   String email_id=BaseClass.randomeString()+"@gmail.com";
 	   sl.enter_email_signup(email_id);
 	   
+	   sl.enter_name_signup(email_id);
+	   
 	}
 
 	@When("click on Signup button")

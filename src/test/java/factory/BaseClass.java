@@ -47,9 +47,10 @@ public class BaseClass
 				switch(getProperties().getProperty("browser").toLowerCase()) 
 				{
 				case "chrome":
-					ChromeOptions opt=new ChromeOptions();
-					opt.addExtensions(new File("I:\\Ecommerce\\Extensions\\adblock.crx"));
-			        driver=new ChromeDriver(opt);
+					//ChromeOptions opt=new ChromeOptions();
+					//opt.addExtensions(new File("I:\\Ecommerce\\Extensions\\adblock.crx"));
+			        //driver=new ChromeDriver(opt);
+					driver=new ChromeDriver();
 			        break;
 			    case "edge":
 			    	driver=new EdgeDriver();

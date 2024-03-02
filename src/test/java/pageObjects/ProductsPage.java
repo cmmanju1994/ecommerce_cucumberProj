@@ -82,9 +82,11 @@ public class ProductsPage extends BasePage
 	
 	public String get_ProductsPage_title()
 	{
+		
 		//BaseClass.getDriver().getTitle();
 		String Products_Page_Title=driver.getTitle();
 		return Products_Page_Title;
+		
 		
 	}
 	

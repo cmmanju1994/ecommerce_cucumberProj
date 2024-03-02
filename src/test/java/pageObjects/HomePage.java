@@ -37,6 +37,15 @@ public class HomePage extends BasePage
 	@FindBy(xpath="//div[@id=\"dismiss-button\"]")
 	WebElement adclose;
 	
+	@FindBy(xpath="//div[@id=\"ad_position_box\"]")
+	WebElement adPositionBox;
+	
+	@FindBy(xpath="//div[@id=\"dismiss-button\"]")
+	WebElement disimiss_button_ad;
+	
+	@FindBy(xpath="//ul[@class=\"nav navbar-nav\"]/li[3]")
+	WebElement cart;
+	
 	
 	
 	// Methods
@@ -73,6 +82,27 @@ public class HomePage extends BasePage
 	{
 		
 		link_Products.click();
+		try
+		{
+		if(adPositionBox.isDisplayed())
+		{
+			driver.switchTo().frame(adPositionBox);
+			disimiss_button_ad.click();
+			driver.switchTo().defaultContent();
+		}
+		else
+		{
+			System.out.println("Ad has not come");
+		}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		finally
+		{
+			System.out.println("Finally executed");
+		}
 		
 		/*BaseClass obj=new BaseClass();
 		if(adlayout.isDisplayed())
@@ -89,5 +119,11 @@ public class HomePage extends BasePage
 		
 		
 	}
+	
+	public void click_cart()
+	{
+		cart.click();
+	}
+	
 
 }

@@ -32,8 +32,11 @@ public class ProductDetailsSteps
 		
 	   pp= new ProductsPage(BaseClass.getDriver());
 	   Assert.assertEquals(pp.get_ProductsPage_title(),BaseClass.getProperties().getProperty("products_page_title"));
+		
+		
 	   //Assert.assertEquals(pp.get_ProductsPage_title(), BaseClass.getProperties().getProperty("products_page_title")); 
 	}
+		
 	@Then("The products list is visible")
 	public void the_products_list_is_visible() 
 	{
