@@ -14,7 +14,7 @@ import io.cucumber.junit.CucumberOptions;
 		// {".//Features/SearchProduct.feature",".//Features/AddProductInCart.feature"},
 		// features={".//Feature Files/NopCommerce_Registration.feature",".//Feature
 		// Files/NopCommerce_Login.feature"},
-		tags="@Login",
+		tags="@dummy",
 		features = { "src/test/resources/FeatureFiles/" },
         
 		glue = "stepDefinition", plugin = { "pretty", "html:reports/myreport.html", "rerun:target/rerun.txt",
