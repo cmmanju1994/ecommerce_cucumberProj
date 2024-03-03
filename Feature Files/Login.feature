@@ -1,3 +1,4 @@
+@Login
 Feature: Login Functionality
   
   Scenario:Login using correct email id and password
