@@ -1,1 +1,3 @@
-file:Feature%20Files/ProductQuantityCart.feature:3
+file:Feature%20Files/PlaceOrder_RegisterWhileCheckOut.feature:3
+file:Feature%20Files/ProductDetails.feature:3
+file:Feature%20Files/RegisterUser.feature:3

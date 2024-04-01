@@ -28,9 +28,8 @@ public class DriverInitialization {
     	 if(pc.getProperties().getProperty("execution_env").equalsIgnoreCase("local")) {
 				switch(pc.getProperties().getProperty("browser").toLowerCase()) {
 				case "chrome":
-				ChromeOptions opt=new ChromeOptions();
-					opt.addExtensions(new File("I:\\Ecommerce\\Extensions\\adblock.crx"));
-			        driver=new ChromeDriver(opt);
+				
+			        driver=new ChromeDriver();
 			        break;
 			    case "edge":
 			    	driver=new EdgeDriver();

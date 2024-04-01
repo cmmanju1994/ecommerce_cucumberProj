@@ -408,10 +408,8 @@ public class BaseClass {
 	}
 
 	public boolean mouseover(WebDriver driver, WebElement ele) {
-		boolean flag = false;
 		try {
 			new Actions(driver).moveToElement(ele).build().perform();
-			flag = true;
 			return true;
 		} catch (Exception e) {
 			return false;
